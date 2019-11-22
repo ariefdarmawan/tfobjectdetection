@@ -1,0 +1,125 @@
+item {
+	id: 1
+	name: 'Marlboro Read 20'
+}
+
+item {
+	id: 2
+	name: 'Marlboro Light 20'
+}
+
+item {
+	id: 3
+	name: 'Marlboro Ice Burst 20'
+}
+
+item {
+	id: 4
+	name: 'Marlboro Filter Black 12'
+}
+
+item {
+	id: 5
+	name: 'Marlboro Filter Black 20'
+}
+
+item {
+	id: 11
+	name: 'A Mild Filter 12'
+}
+
+item {
+	id: 12
+	name: 'A Mild 16'
+}
+
+item {
+	id: 13
+	name: 'A Mild 12'
+}
+
+item {
+	id: 14
+	name: 'A Mild Menthol 16'
+}
+
+item {
+	id: 15
+	name: 'Avolution Red 20'
+}
+
+item {
+	id: 16
+	name: 'Avolution Menthol 20'
+}
+
+item {
+	id: 21
+	name: 'U Mild 16'
+}
+
+item {
+	id: 22
+	name: 'U Mild 12'
+}
+
+item {
+	id: 23
+	name: 'U Mild Cool 16'
+}
+
+item {
+	id: 24
+	name: 'U Mild Bold 16'
+}
+
+item {
+	id: 31
+	name: 'Sampoerna Hijau 12'
+}
+
+item {
+	id: 41
+	name: 'Dji Sam Soe Super Premium 12'
+}
+
+item {
+	id: 42
+	name: 'Dji Sam Soe 16'
+}
+
+item {
+	id: 43
+	name: 'Dji Sam Soe 12'
+}
+
+item {
+	id: 44
+	name: 'Philip Morris Bold 12'
+}
+
+item {
+	id: 45
+	name: 'Magnum Filter 12'
+}
+
+item {
+	id: 46
+	name: 'Magnum Mild 16'
+}
+
+item {
+	id: 47
+	name: 'Magnum Mild 20'
+}
+
+item {
+	id: 999
+	name: 'Unknown HMS'
+}
+
+item {
+	id: 998
+	name: 'Unknown Competitor'
+}
+

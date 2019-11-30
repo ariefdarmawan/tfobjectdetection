@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Sampoerna A Mild</folder>
+	<filename>23.Sampoerna-A-Mild-kretek_530x@2x.jpg</filename>
+	<path>/Users/ariefdarmawan/Temp/downloads/Sampoerna A Mild/23.Sampoerna-A-Mild-kretek_530x@2x.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1000</width>
+		<height>1000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>A Mild</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>41</xmin>
+			<ymin>214</ymin>
+			<xmax>619</xmax>
+			<ymax>734</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,62 @@
+<annotation>
+	<folder>Sampoerna A Mild</folder>
+	<filename>56.waspada-ada-rokok-sampoerna-mild-aspal-beredar-di-warung-cca560.jpg</filename>
+	<path>/Users/ariefdarmawan/Temp/downloads/Sampoerna A Mild/56.waspada-ada-rokok-sampoerna-mild-aspal-beredar-di-warung-cca560.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1000</width>
+		<height>660</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>A Mild</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>591</xmin>
+			<ymin>337</ymin>
+			<xmax>783</xmax>
+			<ymax>480</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>A Mild</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>306</ymin>
+			<xmax>166</xmax>
+			<ymax>497</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>A Mild</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>186</xmin>
+			<ymin>109</ymin>
+			<xmax>383</xmax>
+			<ymax>193</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>A Mild</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>113</xmin>
+			<ymin>210</ymin>
+			<xmax>306</xmax>
+			<ymax>298</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Sampoerna A Mild</folder>
+	<filename>34.Sampoerna_A_Mild_1_slop.jpg</filename>
+	<path>/Users/ariefdarmawan/Temp/downloads/Sampoerna A Mild/34.Sampoerna_A_Mild_1_slop.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1000</width>
+		<height>1154</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>A Mild</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>179</xmin>
+			<ymin>451</ymin>
+			<xmax>823</xmax>
+			<ymax>1077</ymax>
+		</bndbox>
+	</object>
+</annotation>

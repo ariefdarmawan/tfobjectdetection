@@ -23,21 +23,22 @@ flags = tf.compat.v1.flags
 flags.DEFINE_string('csv_input', '', 'Path to the CSV input')
 flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
 flags.DEFINE_string('image_dir', '', 'Path to images')
-flags.DEFINE_string('labelmap', '../data/label_map.csv', 'Path to label')
-flags.DEFINE_string('labelout', '../data/label_out.pbtxt', 'Path to pbtxt')
+flags.DEFINE_string('label', '../data/label_map.csv', 'Path to label')
+flags.DEFINE_string('map', '', 'Path to pbtxt')
 FLAGS = flags.FLAGS
 
 def read_label_map():
     global labels
-    labels = pd.read_csv(FLAGS.labelmap)
+    labels = pd.read_csv(FLAGS.label)
 
-    f = open(FLAGS.labelout, "w")
-    for _, row in labels.iterrows():
-        f.write("item {\n")
-        f.write("\tid: {}\n".format(row["tagid"]))
-        f.write("\tname: '{}'\n".format(row["label"]))
-        f.write("}\n\n")
-    f.close()
+    if FLAGS.map!='':
+        f = open(FLAGS.map, "w")
+        for _, row in labels.iterrows():
+            f.write("item {\n")
+            f.write("\tid: {}\n".format(row["tagid"]))
+            f.write("\tname: '{}'\n".format(row["label"]))
+            f.write("}\n\n")
+        f.close()
 
 # TO-DO replace this with label map
 def class_text_to_int(row_label):
@@ -69,7 +70,7 @@ def create_tf_example(group, path):
     ymaxs = []
     classes_text = []
     classes = []
-
+    
     for _, row in group.object.iterrows():
         xmins.append(row['xmin'] / width)
         xmaxs.append(row['xmax'] / width)

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Sampoerna A Mild</folder>
+	<filename>21.GK_SAMPOERNA_1024x1024.png</filename>
+	<path>/Users/ariefdarmawan/Temp/downloads/Sampoerna A Mild/21.GK_SAMPOERNA_1024x1024.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1024</width>
+		<height>1024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>A Mild</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>208</xmin>
+			<ymin>568</ymin>
+			<xmax>504</xmax>
+			<ymax>836</ymax>
+		</bndbox>
+	</object>
+</annotation>

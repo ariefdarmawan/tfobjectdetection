@@ -1,0 +1,38 @@
+<annotation>
+	<folder>train</folder>
+	<filename>WhatsApp Image 2019-11-29 at 14.51.27.jpeg</filename>
+	<path>/Users/ariefdarmawan/Coding/ai/tfobjectdetection/images/train/WhatsApp Image 2019-11-29 at 14.51.27.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>375</width>
+		<height>500</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>A Mild</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>95</xmin>
+			<ymin>87</ymin>
+			<xmax>231</xmax>
+			<ymax>172</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>A Mild</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>101</xmin>
+			<ymin>178</ymin>
+			<xmax>231</xmax>
+			<ymax>260</ymax>
+		</bndbox>
+	</object>
+</annotation>

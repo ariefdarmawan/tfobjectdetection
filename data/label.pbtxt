@@ -3,3 +3,8 @@ item {
 	name: 'A Mild'
 }
 
+item {
+	id: 2
+	name: 'U Mild'
+}
+

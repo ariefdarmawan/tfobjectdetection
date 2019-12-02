@@ -43,6 +43,6 @@ export model_name='faster_rcnn_1'
 python py/export_inference_graph.py \
     --input_type image_tensor \
     --pipeline_config_path data/model/$model_name.config \
-    --trained_checkpoint_prefix data/training/model.ckpt-2052 \
+    --trained_checkpoint_prefix data/training/model.ckpt-6926 \
     --output_directory data/graph
     

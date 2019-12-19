@@ -34,7 +34,7 @@ def init(flozengraphpath='data/graph/frozen_inference_graph.pb',labelpath='data/
             od_graph_def.ParseFromString(serialized_graph)
             tf.import_graph_def(od_graph_def, name='')
 
-basic_color = [(255,0,0),(0,255,0),(0,0,255)]
+basic_color = [(255,0,0),(255,255,0),(0,234,255),(170,0,255),(255,127,0),(191,255,0),(0,149,255),(255,0,170),(255,212,0),(106,255,0),(0,64,255),(237,185,185),(185,215,237),(231,233,185),(220,185,237),(185,237,224),(143,35,35),(35,98,143),(143,106,35),(107,35,143),(79,143,35),(0,0,0),(115,115,115),(204,204,204)]
 labels = dict()
 
 def predict(image,threshold=0.75,tempdir="./",filenameOutput="hasil.jpeg"):

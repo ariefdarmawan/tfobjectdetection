@@ -31,11 +31,11 @@ def detect():
         result["products"]=sub_result["count"]
         #for key,val in sub_result["count"]:
         #    result["products"].append({key:val})
-        with open("OUTPUT_"+filename, "rb") as image_file:
-            encoded_string = base64.b64encode(image_file.read())
-            hh = str(encoded_string)
+        #with open("OUTPUT_"+filename, "rb") as image_file:
+        #    encoded_string = base64.b64encode(image_file.read())
+        #    hh = str(encoded_string)
             #print(hh)
-            result["image_base64"] = hh#str(encoded_string)
+        #    result["image_base64"] = hh#str(encoded_string)
         resultAll.append(result)
     return jsonify(resultAll)
     

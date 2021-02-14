@@ -34,9 +34,30 @@ def init(flozengraphpath='data/graph/frozen_inference_graph.pb',labelpath='data/
             od_graph_def.ParseFromString(serialized_graph)
             tf.import_graph_def(od_graph_def, name='')
 
-basic_color = [(255,0,0),(0,255,0),(0,0,255)]
+basic_color = [(255,0,0),(255,255,0),(0,234,255),(170,0,255),(255,127,0),(191,255,0),(0,149,255),(255,0,170),(255,212,0),(106,255,0),(0,64,255),(237,185,185),(185,215,237),(231,233,185),(220,185,237),(185,237,224),(143,35,35),(35,98,143),(143,106,35),(107,35,143),(79,143,35),(0,0,0),(115,115,115),(204,204,204)]
 labels = dict()
-
+def sortVCluster(val):
+    return val["vcluster"].minX
+class VCluster:
+    def __init__(self,minX,maxX):
+        self.maxX=maxX
+        self.minX=minX
+        self.member = []
+    '''
+        check if another VCluster is within this VCluster
+    '''
+    def Contains(self,anotherVCluster):
+        if (anotherVCluster.minX>=self.minX and anotherVCluster.minX<=self.maxX) or (anotherVCluster.maxX>=self.minX and anotherVCluster.maxX<=self.maxX):
+            return True
+        return False
+    '''
+        expand 
+    '''
+    def Expand(self,anotherVCluster):
+        self.minX = min(anotherVCluster.minX,self.minX)
+        self.maxX = max(anotherVCluster.maxX,self.maxX)
+    def AddMember(self,idx):
+        self.member.append(idx)
 def predict(image,threshold=0.75,tempdir="./",filenameOutput="hasil.jpeg"):
     global detection_graph
     global sess
@@ -117,6 +138,8 @@ def predict(image,threshold=0.75,tempdir="./",filenameOutput="hasil.jpeg"):
                 result = {}
                 result["count"] = dict()
                 result["details"] = []
+                
+                tempResultDetail = []
                 for i in range(itemCount):
                     # if i==3:
                     #     break
@@ -137,9 +160,32 @@ def predict(image,threshold=0.75,tempdir="./",filenameOutput="hasil.jpeg"):
                     print(coord2)
                     color = basic_color[output_dict['detection_classes'][i]-1]
                     coord3 = [str(coord2[0]),str(coord2[1]),str(coord2[2]),str(coord2[3])]
-                    result["details"].append({"label":curLabel,"box":coord3,"confidence":str(output_dict['detection_scores'][i])})
+                    tempResultDetail.append({"label":curLabel,"vcluster":VCluster(coord2[1],coord2[3]),"box":coord3,"confidence":str(output_dict['detection_scores'][i])})
                     imDraw.rectangle(coord2,outline=color)
+                if len(tempResultDetail)==0:
+                    image.save(filenameOutput,"JPEG")
+                    return result
+                tempResultDetail.sort(key=sortVCluster)
+                rowClusters = []
+                curVCluster = VCluster(tempResultDetail[0]["vcluster"].minX,tempResultDetail[0]["vcluster"].maxX)
+                curRow = 1
+                for i in range(len(tempResultDetail)):
+                    print(curVCluster.minX,curVCluster.maxX,tempResultDetail[i]["vcluster"].minX,tempResultDetail[i]["vcluster"].maxX)
+                    if curVCluster.Contains(tempResultDetail[i]["vcluster"]):
+                         curVCluster.Expand(tempResultDetail[i]["vcluster"])
+                         del tempResultDetail[i]["vcluster"]
+                         print("curRowExpand",curRow)
+                    else:
+                        rowClusters.append(curVCluster)
+                        curRow+=1
+                        print("curRowNew",curRow)
+                        curVCluster = VCluster(tempResultDetail[i]["vcluster"].minX,tempResultDetail[i]["vcluster"].maxX)
+                        del tempResultDetail[i]["vcluster"]
+                    
+                    tempResultDetail[i]["Row"] = curRow
+                result["details"] = tempResultDetail #.append
                 image.save(filenameOutput,"JPEG")
+                print("=====")
                 return result
                 # Visualization of the results of a detection.
                 #cv2.imshow('object_detection', cv2.resize(image_np, (800, 600)))
